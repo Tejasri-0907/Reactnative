@@ -5,6 +5,8 @@ import Login from './Login';
 import Register from './Register';
 import UsersList from './UsersList';
 import ProfileScreen from './ProfileScreen';  // Import ProfileScreen component
+import Personal from './Personal';   
+
 
 const slides = [
   {
@@ -57,9 +59,11 @@ export default function OnboardingScreen() {
       return <Login setScreen={(text) => setScreen(text)} />;
     } else if (screen === "UsersList") {
       return <UsersList setScreen={(text) => setScreen(text)} />;
-    } else if (screen === "ProfileScreen") {  // New condition for ProfileScreen
+    } else if (screen === "ProfileScreen") {
       return <ProfileScreen setScreen={(text) => setScreen(text)} />;
-    }
+    } else if (screen === "Personal") {
+      return <Personal setScreen={(text) => setScreen(text)} />;
+    } 
   } else {
     return <AppIntroSlider renderItem={_renderItem} data={slides} onDone={_onDone} />;
   }
@@ -96,4 +100,5 @@ const styles = StyleSheet.create({
     height: "100%"
   }
 });
+
 

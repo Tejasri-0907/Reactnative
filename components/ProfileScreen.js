@@ -25,7 +25,9 @@ export default function ProfileScreen({ setScreen }) {
                   setIsCompany(false);
                 }}
               >
-                <Text style={styles.tabText}>Personal</Text>
+              <TouchableOpacity onPress={() => setScreen("Personal")}>
+              <Text style={styles.tabText}>Personal</Text>
+              </TouchableOpacity>
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.tab, isProfessional && styles.activeTab]}
@@ -35,7 +37,9 @@ export default function ProfileScreen({ setScreen }) {
                   setIsCompany(false);
                 }}
               >
+                <TouchableOpacity onPress={() => setScreen("Professional")}>
                 <Text style={styles.tabText}>Professional</Text>
+              </TouchableOpacity>
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.tab, isCompany && styles.activeTab]}
